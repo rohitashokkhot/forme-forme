@@ -84,61 +84,50 @@ body
 header
 {
 	width:100%;
-	background:aqua;
+	/*background:aqua;*/
 	margin:0 auto;
 	display:table;
+	border-bottom:5px solid #000;
 }
 
-#hlc
+.hlc
 {
-	background:red;
+	/*background:red;*/
 	width:85%;
 	float:left;
 }
 
-#hrc
+.hrc
 {
-	background:blue;
+	/*background:blue;*/
 	width:15%;
 	float:right;
 	text-align:right;
 }
 
-
-#headercontent
-{
-	background:#fff;
-	padding:2px;
-	margin:2px 10px;
-	border: 1px dotted #fff;
-	float:left;
-	width:80%;
-	height:100%;
-	position:relative;
-}
-
-#headermenu
-{
-	float:right;
-	width:13%;
-	position:relative;
-}
-#hlc h1
+.hlc h1
 {
 	font-size:24px;
 	margin:5px 10px;
 	border: 1px dotted #fff;
+	padding: 0 2px;
+}
+
+.hrc a
+{
+	margin-right:10px;
 	padding:2px;
+	display:inline;
 }
 
 .boundRect
 {
-	border: 1px dotted #999;
-	background:aqua;
+
+	background:#FFF4C2;
 }
 
 
-#bodycontent
+#bc
 {
 	padding:5px 0;
 	width:100%;
