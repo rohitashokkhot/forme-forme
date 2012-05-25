@@ -90,6 +90,15 @@ header
 	border-bottom:5px solid #000;
 }
 
+.hc
+{
+	width:100%;
+	/*background:aqua;*/
+	margin:0 auto;
+	display:table;
+	border-bottom:5px solid #000;
+}
+
 .hlc
 {
 	/*background:red;*/
