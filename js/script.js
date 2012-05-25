@@ -6,25 +6,25 @@ $(document).ready(function(){
 });
 
 hedit= 0;
-$(".hoverable").editing=0;
-$(".hoverable").hover(function(){
+$(".hoverable").live("mouseenter",function(){
+	//$("#editmenu").remove();
 	$(this).addClass("boundRect");
 	if(hedit==0)
-		$(this).children(".hrc").append("<a href='#' id=hedit> Edit </a>");
+		$(this).children(".hrc").append("<div id=editmenu><a href='#' id=hedit>Edit</a><a href='#' id=hduplicate>Duplicate</a><a href='#' id=hcancel>Cancel</a></div>");
 	$(this).children(".hrc").show();
-},function(){
+}).live("mouseleave",function(){
 	$(this).removeClass("boundRect");
 	if(hedit==0)
 	{
-		$(".hrc").hide();
+		$(this).children(".hrc").hide();
 		//var editable=$(this).find(".editable");
 		//$(editable).attr("contentEditable", "false");
-		$("#hedit").remove();
+		$("#editmenu").remove();
 	}
 });
 
 $("#hedit").live("click", function(){
-	var parent= $(this).parent().parent();
+	var parent= $(this).parent().parent().parent();
 	var editable = $(parent).find(".editable");
 	if(hedit==0)
 	{
@@ -40,5 +40,20 @@ $("#hedit").live("click", function(){
 		hedit=0;
 	}
 });
+
+$("#hduplicate").live("click", function(){
+	//alert("hi");
+	//$("#editmenu").remove();
+	var parent= $(this).parent().parent();
+	var gparent = $(parent).parent();
+	var clone = $(parent).siblings();
+	var content = $(clone).html();
+	//alert(content);
+	var ucontent ="<div class='hoverable hc'> <div class='hlc'>" + content + "</div><div class=hrc style='display:none'></div></div>";
+	//alert(ucontent);
+	//$("#formcontent").append(ucontent);
+	$(ucontent).insertAfter($(gparent));
+});
+
 
 
