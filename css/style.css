@@ -125,12 +125,21 @@ header
 	/*border: 1px dotted #fff;*/
 	padding: 0 2px;
 }
-.hlc input, .hlc .editable
+.hlc input, .hlc div, .hlc select, .hlc textarea
 {
 	margin:5px 20px;
 	/*border: 1px dotted #fff;*/
 	padding: 0 2px;
 }
+
+
+
+span.qtitle
+{
+	margin:5px 0px;
+	padding: 0 2px;
+}
+
 
 .hlc p.editable
 {
