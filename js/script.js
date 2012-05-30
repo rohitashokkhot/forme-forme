@@ -10,7 +10,7 @@ $(".hoverable").live("mouseenter",function(){
 	//$("#editmenu").remove();
 	$(this).addClass("boundRect");
 	if(hedit==0)
-		$(this).children(".hrc").append("<div id=editmenu><a href='#' id=hedit>Edit</a><a href='#' id=hduplicate>Duplicate</a><a href='#' id=hcancel>Cancel</a></div>");
+		$(this).children(".hrc").append("<div id=editmenu><a href='#' id=hedit>Edit</a><a href='#' id=hduplicate>Duplicate</a><a href='#' id=hdelete>Delete</a></div>");
 	$(this).children(".hrc").show();
 }).live("mouseleave",function(){
 	$(this).removeClass("boundRect");
@@ -49,10 +49,24 @@ $("#hduplicate").live("click", function(){
 	var clone = $(parent).siblings();
 	var content = $(clone).html();
 	//alert(content);
-	var ucontent ="<div class='hoverable hc'> <div class='hlc'>" + content + "</div><div class=hrc style='display:none'></div></div>";
+	var ucontent ="<div class='hoverable hc slide' style='display:none'> <div class='hlc'>" + content + "</div><div class=hrc style='display:none'></div></div>";
 	//alert(ucontent);
 	//$("#formcontent").append(ucontent);
 	$(ucontent).insertAfter($(gparent));
+	$(".slide").slideDown("slow", function(){
+		//$(this).removeClass('slide');
+	});
+});
+
+$("#hdelete").live("click", function(){
+	//alert("hi");
+	//$("#editmenu").remove();
+	var parent= $(this).parent().parent();
+	var gparent = $(parent).parent();
+
+	$(gparent).slideUp("slow", function(){
+		$(this).remove();
+	});
 });
 
 
