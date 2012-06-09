@@ -144,10 +144,13 @@ $("#hdelete").live("click", function(){
 
 
 $("#btnSubmit").live("click", function(){
-	var ques= $("#questions").html();
+	$("div .hoverable").removeClass("hoverable");
+	var ques= $("#formcontent").html();
 	//alert(ques);
 	$.post('submit.php',{ques:ques}, function(data){
-        alert(data);
+        //alert(data);
+		
+		$("#questions").html("Your form is ready at: <a href='form.php'>form</php>");
     }); 
 });
 
