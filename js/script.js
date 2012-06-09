@@ -85,7 +85,21 @@ $("#hduplicate").live("click", function(){
 				secondhalf = secondhalf + radbox + "<span>" + label + "</span> <br/>";
 			});
 			//qradiobox++;
-			var second = "<div class='responsebox shortans'>" + secondhalf + "</div>";
+			var second = "<div class='responsebox multchoice'>" + secondhalf + "</div>";
+			//alert(second);
+		}
+		else if($(response).hasClass("shortans"))
+		{	
+			
+			var txtbox= "<input type='text' name='q"+ qno +"tb' id='q"+ qno +"tb' />";
+			var second = "<div class='responsebox shortans'>" + txtbox + "</div>";
+			//alert(second);
+		}
+		else if($(response).hasClass("longans"))
+		{	
+			
+			var txtbox= "<textarea rows='2' cols='50' name='q"+ qno +"ta' id='q"+ qno +"ta'/>";
+			var second = "<div class='responsebox longans'>" + txtbox + "</div>";
 			//alert(second);
 		}
 		first = "<div class='editable qtitle'>"+ questiontitle + "</div>"; 
@@ -116,14 +130,14 @@ $("select#passbox").live('change',function () {
 		$(sib).attr("class", "");
 		$(sib).addClass("shortans");
 		$(sib).addClass("responsebox");
-		$(sib).html("<input type='text' name='tb"+ qno +"' id='tb"+ qno +"'/>");
+		$(sib).html("<input type='text' name='q"+ qno +"tb' id='q"+ qno +"tb' />");
 	}
 	else if(val==2)
 	{
 		$(sib).attr("class", "");
 		$(sib).addClass("longans");
 		$(sib).addClass("responsebox");
-		$(sib).html("<textarea rows='2' cols='50' name='mtb"+ qno +"' id='mtb"+ qno +"'/>");
+		$(sib).html("<textarea rows='2' cols='50' name='q"+ qno +"ta' id='q"+ qno +"ta'/>");
 	}
 	else if(val==3)
 	{
