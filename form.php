@@ -17,9 +17,9 @@
 	
 	<header class="">
 		<div class="hlc">
-			<h1 class="editable" contenteditable="false">Untitled formjjjj</h1>
+			<h1 class="editable">Untitled form</h1>
 		</div>
-		<div class="hrc" style="display: none;">		
+		<div class="hrc" style="display:none">		
 		</div>
 	</header>
 	<div id="questions">
@@ -34,16 +34,18 @@
 
 	<div class="hc qblock">
 		<div class="hlc">
-			<div class="editable qtitle">1. Question Title</div>
+			<div class="editable qtitle" contenteditable="false">1. Question Title</div>
 			
-			<div class="responsebox">
-				<input type="text">
-			</div>
+			<div class="responsebox"><textarea rows="2" cols="50" name="mtb1" id="mtb1"></textarea></div>
 		</div>
 		<div class="hrc" style="display: none;">
 
 		</div>
-	</div>
+	</div><div class="hc slide qblock" style=""><div class="hlc">
+			<div class="editable qtitle" contenteditable="false">1. Question Title</div>
+			
+			<div class="responsebox"><textarea rows="2" cols="50" name="mtb1" id="mtb1"></textarea></div>
+		</div><div class="hrc" style="display: none;"><div id="editmenu"><a href="#" id="hedit">Edit</a><a href="#" id="hduplicate">Duplicate</a><a href="#" id="hdelete">Delete</a></div></div></div>
 	
 	<div class="submit hc">
 		<input value="Submit!" id="btnSubmit" class="button" type="button">

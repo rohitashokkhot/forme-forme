@@ -1,4 +1,4 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+# [Forme-Forme](http://pascal.iiit.ac.in/~rohit/forme-forme)
 
 HTML5 Boilerplate is a professional front-end template that helps you build fast, robust, adaptable, and future-proof websites. Spend more time developing and less time reinventing the wheel.
 
@@ -31,14 +31,14 @@ Clone the git repo - `git clone git://github.com/h5bp/html5-boilerplate.git` - o
 
 ## Contributing
 
-Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boilerplate/wiki/contribute). Hundreds of developers have helped make the HTML5 Boilerplate what it is today.
+Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boilerplate/wiki/contribute). Hundreds of developers have helped make the Forme-Forme what it is today.
 
 
 ## Project information
 
 * Source: http://github.com/h5bp/html5-boilerplate
-* Web: http://html5boilerplate.com
-* Docs: http://html5boilerplate.com/docs
+* Web: http://pascal.iiit.ac.in/~rohit/forme-forme
+* Docs: http://pascal.iiit.ac.in/~rohit/forme-forme/docs
 * Twitter: http://twitter.com/h5bp
 
 

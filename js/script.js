@@ -69,14 +69,15 @@ $("#hduplicate").live("click", function(){
 		var gparent = $(parent).parent();
 		var clone = $(parent).siblings();
 		var content = $(clone).html();
-		//alert(content);
+		alert(content);
 		//if (qblock=0)
+		qno++;
 		var precontent ="<div class='hoverable hc slide qblock' style='display:none'>";
 		var ucontent =precontent + "<div class='hlc'>" + content + "</div><div class=hrc style='display:none'></div></div>";
 		//alert(ucontent);
 		//$("#formcontent").append(ucontent);
 		$(ucontent).insertAfter($(gparent));
-		qno++;
+		
 		$(".slide").slideDown("slow", function(){
 			//$(this).removeClass('slide');
 		});
