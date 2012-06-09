@@ -65,13 +65,34 @@ $("#hduplicate").live("click", function(){
 	//$("#editmenu").remove();
 	if(hedit==0)
 	{
+		qno++;
 		var parent= $(this).parent().parent();
 		var gparent = $(parent).parent();
 		var clone = $(parent).siblings();
-		var content = $(clone).html();
-		alert(content);
+		//rbox=1;
+		var response = $(clone).children(".responsebox");
+		var questiontitle = $(clone).children(".qtitle").html();
+		//alert(questiontitle);
+		if($(response).hasClass("multchoice"))
+		{	
+			
+			var radbox= "<input type='radio' id='q"+ qno +"r"+ rbox +"' value='"+ rbox +"'  name= 'q"+ qno +"r' />";
+			var secondhalf="";
+			$(response).children("span").each(function(){
+				var label = $(this).html();
+				rbox++;
+				//isradio=1;
+				secondhalf = secondhalf + radbox + "<span>" + label + "</span> <br/>";
+			});
+			//qradiobox++;
+			var second = "<div class='responsebox shortans'>" + secondhalf + "</div>";
+			//alert(second);
+		}
+		first = "<div class='editable qtitle'>"+ questiontitle + "</div>"; 
+		
+		content= first + second;
+		//alert(content);
 		//if (qblock=0)
-		qno++;
 		var precontent ="<div class='hoverable hc slide qblock' style='display:none'>";
 		var ucontent =precontent + "<div class='hlc'>" + content + "</div><div class=hrc style='display:none'></div></div>";
 		//alert(ucontent);
@@ -92,20 +113,30 @@ $("select#passbox").live('change',function () {
 	var sib = $(this).parent().siblings(".responsebox");
 	if(val==1)
 	{
+		$(sib).attr("class", "");
+		$(sib).addClass("shortans");
+		$(sib).addClass("responsebox");
 		$(sib).html("<input type='text' name='tb"+ qno +"' id='tb"+ qno +"'/>");
 	}
 	else if(val==2)
 	{
+		$(sib).attr("class", "");
+		$(sib).addClass("longans");
+		$(sib).addClass("responsebox");
 		$(sib).html("<textarea rows='2' cols='50' name='mtb"+ qno +"' id='mtb"+ qno +"'/>");
 	}
 	else if(val==3)
 	{
+		$(sib).attr("class", "");
+		$(sib).addClass("multchoice");
+		$(sib).addClass("responsebox");
 		rbox=1;
-		var radiobox1 = "<input type='radio' name='q"+ qradiobox +"option"+ rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span>";
+		var radiobox1 = "<input type='radio' name= 'q"+ qno +"r' id='q"+ qno +"option"+ rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span>";
 		rbox++;
-		var radiobox2 = "<input type='radio' name='q"+ qradiobox +"option"+ rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span>";
+		var radiobox2 = "<input type='radio' name= 'q"+ qno +"r' id='q"+ qno +"option"+ rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span>";
+		rbox++;
 		$(sib).html(radiobox1 + "<br />" + radiobox2 + "<br/> <a href='#' class='addmore'> Add more </a>");
-		qradiobox++;
+		//qradiobox++;
 	}
 });
 
@@ -118,9 +149,10 @@ $("input.radiotext").live('focusout',function () {
 });
 
 $(".addmore").live("click", function(){
+
+	var radiobox = "<input type='radio' name= 'q"+ qno +"r' id='q"+qno+"option" + rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span><br/>";
+	//qradiobox++;
 	rbox++;
-	var radiobox = "<input type='radio' name='q"+qradiobox+"option" + rbox +"' value='"+ rbox +"' /><span><input type='text' class='radiotext'/></span><br/>";
-	qradiobox++;
 	$(this).before(radiobox);
 	
 });
