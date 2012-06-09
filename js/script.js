@@ -143,4 +143,11 @@ $("#hdelete").live("click", function(){
 });
 
 
+$("#btnSubmit").live("click", function(){
+	var ques= $("#questions").html();
+	//alert(ques);
+	$.post('submit.php',{ques:ques}, function(data){
+        alert(data);
+    }); 
+});
 
